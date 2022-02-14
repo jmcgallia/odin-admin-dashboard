@@ -3,9 +3,17 @@ body {
     margin: 0px;
 }
 
-p {
+p,
+h4,
+h5 {
     padding: 0px;
     margin: 0px;
+}
+
+.no-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .container {
@@ -13,7 +21,7 @@ p {
     height: 100vh;
     background-color: aliceblue;
     display: grid;
-    grid-template-columns: max-content minmax(400px, 1fr) minmax(min-content, 250px);
+    grid-template-columns: max-content minmax(400px, 1fr) minmax(200px, 250px);
     grid-template-rows: max-content 1fr;
 }
 
@@ -94,9 +102,33 @@ p {
 
 .project-card {
     background-color: slateblue;
+    padding: 10px;
     height: 200px;
     border-radius: 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    gap: 10px;
 }
+
+.proj-card-header {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 5px;
+}
+
+.project-card-buttons {
+    justify-self: end;
+}
+
+.project-card p {
+    font-size: 1.2rem;
+}
+
+.project-card h4 {
+    font-size: 1.2rem;
+}
+
 
 /*************************/
 /***** Reports Area *****/
@@ -111,6 +143,19 @@ p {
     display: grid;
     grid-template-rows: 1fr 1fr;
     gap: 10px;
+}
+
+.report-card {
+    text-overflow: ellipsis;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+}
+
+.report-card-header {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    align-items: center;
+    gap: 5px;
 }
 
 .ship-reports {
